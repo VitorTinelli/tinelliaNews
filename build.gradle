@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	id 'org.springframework.boot' version '3.3.3'
 	id 'io.spring.dependency-management' version '1.1.6'
+	id 'com.github.johnrengelman.shadow' version '7.1.2'
 }
 
 group = 'tinellia'
@@ -18,6 +19,12 @@ jar {
 		attributes(
 				'Main-Class': 'tinellia.news.TinelliaNewsApplication'
 		)
+	}
+}
+
+shadowJar {
+	manifest {
+		attributes 'Main-Class': 'tinellia.news.TinelliaNewsApplication'
 	}
 }
 
