@@ -13,6 +13,15 @@ java {
 	}
 }
 
+jar {
+	manifest {
+		attributes(
+				'Main-Class': 'tinellia.news.TinelliaNewsApplication'
+		)
+	}
+}
+
+
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
