@@ -18,8 +18,14 @@ public class UsersController {
     private final UserService userService;
 
     @GetMapping
-    public List<Users> getAllUsers() {
-        return userService.getAllUsers();
+    public Users getAllUsers() {
+        return Users.builder()
+                .id(UUID.randomUUID())
+                .username("username")
+                .password("password")
+                .email("email")
+                .authorities("authorities")
+                .build();
     }
 
     @GetMapping("/username")
