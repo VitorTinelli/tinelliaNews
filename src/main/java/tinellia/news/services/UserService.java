@@ -12,40 +12,44 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class UserService {
 
-    private final UsersRepository usersRepository;
 
     public List<Users> getAllUsers() {
-        return usersRepository.findAll();
+       // return usersRepository.findAll();
+        return null;
     }
 
     public Users findUserByUsername(String username) {
-        return usersRepository.findByUsername(username);
+        //return usersRepository.findByUsername(username);
+        return null;
     }
 
     public Users findUserByIdOrThrowException(UUID id) {
-        return usersRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
+//        return usersRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
+        return null;
     }
 
     public Users createUser(String username, String password, String email, String authorities) {
-        return usersRepository.save(Users.builder()
-                .username(username)
-                .password(password)
-                .email(email)
-                .authorities(authorities)
-                .build());
+//        return usersRepository.save(Users.builder()
+//                .username(username)
+//                .password(password)
+//                .email(email)
+//                .authorities(authorities)
+//                .build());
+        return null;
     }
 
     public Users updateUser(UUID id, String username, String password, String email, String authorities) {
-        return usersRepository.save(Users.builder()
-                .id(id)
-                .username(username)
-                .password(password)
-                .email(email)
-                .authorities(authorities)
-                .build());
+//        return usersRepository.save(Users.builder()
+//                .id(id)
+//                .username(username)
+//                .password(password)
+//                .email(email)
+//                .authorities(authorities)
+//                .build());
+        return null;
     }
 
     public void deleteUser(UUID id) {
-        usersRepository.delete(findUserByIdOrThrowException(id));
+//        usersRepository.delete(findUserByIdOrThrowException(id));
     }
 }
