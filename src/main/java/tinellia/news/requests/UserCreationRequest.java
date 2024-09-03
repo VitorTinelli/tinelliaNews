@@ -2,9 +2,11 @@ package tinellia.news.requests;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
+import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 public class UserCreationRequest {
 
     @NotEmpty(message = "Username cannot be empty")

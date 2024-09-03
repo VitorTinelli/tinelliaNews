@@ -4,6 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tinellia.news.domain.Users;
 import tinellia.news.repository.UsersRepository;
+import tinellia.news.requests.UserCreationRequest;
+import tinellia.news.requests.UserUpdateRequest;
 
 import java.util.List;
 import java.util.UUID;
@@ -26,22 +28,22 @@ public class UserService {
         return usersRepository.findById(id).orElseThrow(() -> new RuntimeException("User not found"));
     }
 
-    public Users createUser(String username, String password, String email, String authorities) {
+    public Users createUser(UserCreationRequest userCreationRequest) {
         return usersRepository.save(Users.builder()
-                .username(username)
-                .password(password)
-                .email(email)
-                .authorities(authorities)
+                .username(userCreationRequest.getUsername())
+                .password(userCreationRequest.getPassword())
+                .email(userCreationRequest.getEmail())
+                .authorities(userCreationRequest.getAuthorities())
                 .build());
     }
 
-    public Users updateUser(UUID id, String username, String password, String email, String authorities) {
+    public Users updateUser(UserUpdateRequest userUpdateRequest) {
         return usersRepository.save(Users.builder()
-                .id(id)
-                .username(username)
-                .password(password)
-                .email(email)
-                .authorities(authorities)
+                .id(userUpdateRequest.getId())
+                .username(userUpdateRequest.getUsername())
+                .password(userUpdateRequest.getPassword())
+                .email(userUpdateRequest.getEmail())
+                .authorities(userUpdateRequest.getAuthorities())
                 .build());
     }
 

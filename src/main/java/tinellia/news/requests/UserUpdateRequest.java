@@ -2,11 +2,13 @@ package tinellia.news.requests;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.UUID;
 
 @Data
+@Builder
 public class UserUpdateRequest {
     @NotEmpty(message = "Id cannot be empty")
     private UUID id;

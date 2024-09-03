@@ -35,12 +35,12 @@ public class UsersController {
 
     @PostMapping
     public Users createUser(@RequestBody @Valid UserCreationRequest userCreationRequest) {
-        return userService.createUser(userCreationRequest.getUsername(), userCreationRequest.getPassword(), userCreationRequest.getEmail(), userCreationRequest.getAuthorities());
+        return userService.createUser(userCreationRequest);
     }
 
     @PutMapping("/{id}")
     public Users updateUser(@RequestBody @Valid UserUpdateRequest userUpdateRequest) {
-        return userService.updateUser(userUpdateRequest.getId(), userUpdateRequest.getUsername(), userUpdateRequest.getPassword(), userUpdateRequest.getEmail(), userUpdateRequest.getAuthorities());
+        return userService.updateUser(userUpdateRequest);
     }
 
     @DeleteMapping("/{id}")
