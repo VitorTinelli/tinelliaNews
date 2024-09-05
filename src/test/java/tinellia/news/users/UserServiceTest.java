@@ -1,4 +1,4 @@
-package tinellia.news.services;
+package tinellia.news.users;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,10 +7,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import tinellia.news.domain.Users;
-import tinellia.news.repository.UsersRepository;
-import tinellia.news.requests.UserCreationRequest;
-import tinellia.news.requests.UserUpdateRequest;
+import tinellia.news.users.requests.UserCreationRequest;
+import tinellia.news.users.requests.UserUpdateRequest;
 
 import java.util.List;
 import java.util.Optional;
@@ -57,7 +55,7 @@ class UserServiceTest {
     void getAllUsersShouldReturnAllUsers() {
         when(usersRepository.findAll()).thenReturn(List.of(user));
         List<Users> usersFound = userService.getAllUsers();
-        assert (usersFound.size() == 1);
+        Assertions.assertEquals(1, usersFound.size());
         verify(usersRepository).findAll();
     }
 

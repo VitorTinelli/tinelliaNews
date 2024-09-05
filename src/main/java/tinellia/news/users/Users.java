@@ -1,4 +1,4 @@
-package tinellia.news.domain;
+package tinellia.news.users;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,7 +7,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.GenericGenerator;
 
 import java.util.UUID;
 
@@ -20,10 +19,10 @@ public class Users {
     @Id
     @GeneratedValue(generator = "UUID")
     private UUID id;
-
     private String username;
     private String password;
     private String email;
     private String authorities;
+
 }
 

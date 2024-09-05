@@ -1,11 +1,9 @@
-package tinellia.news.services;
+package tinellia.news.users;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import tinellia.news.domain.Users;
-import tinellia.news.repository.UsersRepository;
-import tinellia.news.requests.UserCreationRequest;
-import tinellia.news.requests.UserUpdateRequest;
+import tinellia.news.users.requests.UserCreationRequest;
+import tinellia.news.users.requests.UserUpdateRequest;
 
 import java.util.List;
 import java.util.UUID;

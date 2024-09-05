@@ -1,4 +1,4 @@
-package tinellia.news.requests;
+package tinellia.news.users.requests;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;

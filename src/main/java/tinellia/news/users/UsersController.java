@@ -1,12 +1,10 @@
-package tinellia.news.controller;
+package tinellia.news.users;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import tinellia.news.domain.Users;
-import tinellia.news.requests.UserCreationRequest;
-import tinellia.news.requests.UserUpdateRequest;
-import tinellia.news.services.UserService;
+import tinellia.news.users.requests.UserCreationRequest;
+import tinellia.news.users.requests.UserUpdateRequest;
 
 import java.util.List;
 import java.util.UUID;

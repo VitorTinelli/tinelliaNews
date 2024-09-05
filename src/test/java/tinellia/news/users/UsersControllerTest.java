@@ -1,4 +1,4 @@
-package tinellia.news.controller;
+package tinellia.news.users;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -7,8 +7,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import tinellia.news.domain.Users;
-import tinellia.news.services.UserService;
+import tinellia.news.users.requests.UserCreationRequest;
 
 import java.util.List;
 import java.util.UUID;
